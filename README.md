@@ -9,31 +9,28 @@ Each demo tries out one idea for using AI at a specific stage of the SDLC, so
 different approaches can be compared on real (if small) examples. The goal is to
 learn what works, what doesn't, and where AI adds the most value.
 
-## Areas to explore
+## Demos
 
-- **Planning & requirements**: turning ideas into specs, user stories, and tasks
-- **Design**: architecture proposals, trade-off analysis, diagrams
-- **Implementation**: AI pair programming, agentic coding, code generation
-- **Testing**: generating tests, finding edge cases, test-driven workflows
-- **Code review**: automated PR review, security and quality checks
-- **CI/CD & operations**: pipeline automation, incident triage, release notes
-- **Documentation**: keeping docs, READMEs, and changelogs in sync with code
+| Demo | Description |
+| --- | --- |
+| [sdd-eshop](sdd-eshop/) | Spec-driven development with AI |
 
-## Structure
+## Working on a demo
 
-Each demo lives in its own directory with its own README covering:
+Every demo lives in its own top-level folder and is fully self-contained. It has
+its own dependencies, lockfile, virtualenv/`node_modules`, and scripts. There is
+no shared tooling at the root.
 
-1. **Goal**: what the demo is testing
-2. **Setup**: how to run it
-3. **Approach**: the tools, prompts, and workflow used
-4. **Findings**: what worked, what didn't, and takeaways
-
-```
-ai-sdlc-demos/
-├── README.md
-└── <demo-name>/
-    └── README.md
-```
+- **Open only the demo you're working on.** Run `code <demo-folder>` (or
+  `cursor ...`). Search, the file tree and language servers then cover only that
+  demo, and Source Control still works because the editor finds the parent
+  `.git` on its own.
+- **Run Claude Code from inside the demo folder** for the same reason.
+- **Keep editor settings local to the demo** by putting them in
+  `<demo>/.vscode/settings.json`.
+- **Prefix commits with the demo name**, for example
+  `sdd-eshop: add initial spec`. Run `git log -- <demo>/` to see one demo's
+  history.
 
 ## Status
 
